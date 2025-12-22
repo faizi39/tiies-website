@@ -58,6 +58,32 @@
             <a id="panelCtaBtn" class="btn-primary" href="#">Explore Program</a>
             <button id="closeBtn" class="btn-ghost">Close</button>
         </div>
+
+        <form id="serviceRequestForm" class="request-form" novalidate>
+            <h3>Register Your Interest</h3>
+            <div class="form-grid">
+                <div class="form-field">
+                    <label for="reqName">Full Name</label>
+                    <input type="text" id="reqName" name="name" required placeholder="e.g., Ali Khan">
+                </div>
+                <div class="form-field">
+                    <label for="reqEmail">Email</label>
+                    <input type="email" id="reqEmail" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-field">
+                    <label for="reqPhone">Phone (optional)</label>
+                    <input type="tel" id="reqPhone" name="phone" placeholder="0301-1234567">
+                </div>
+                <div class="form-field form-message">
+                    <label for="reqMessage">Message (optional)</label>
+                    <textarea id="reqMessage" name="message" rows="3" placeholder="Tell us your goals"></textarea>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Send Request</button>
+                <span id="formStatus" class="form-status" aria-live="polite"></span>
+            </div>
+        </form>
     </div>
     
 </div>
