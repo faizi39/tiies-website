@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TIIES Programs & Services</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+
+<section class="services">
+    <div class="intro">
+        <h1>Educational Institution</h1>
+        <p>The International Institute of Entrepreneurship (TIIES) empowers learners with practical, industry-aligned training. Explore our programs designed to help you learn, earn, and launch your career or business.</p>
+    </div>
+
+    <div class="services-wrapper">
+
+        <div class="service-box" data-service="basic-computer">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm2 0v10h14V5H5zm4 14h6v2H9v-2z"/></svg></span>
+            <h3>Basic Computer Courses</h3>
+            <p>Digital literacy, MS Office, internet & email essentials.</p>
+        </div>
+
+        <div class="service-box" data-service="skills-programme">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg></span>
+            <h3>Skills Development Programme</h3>
+            <p>Hands-on tracks for job-ready technical skills.</p>
+        </div>
+
+        <div class="service-box" data-service="earn-online">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h18v2H3V4zm0 5h18v2H3V9zm0 5h10v2H3v-2zm0 5h18v2H3v-2zm15.5-9.5 2 2 3.5-3.5-1.4-1.4L18.5 8.6l-.6-.6-1.4 1.4z"/></svg></span>
+            <h3>Earn Money Online with Digital Skills</h3>
+            <p>Monetize design, content, and marketing skills online.</p>
+        </div>
+
+        <div class="service-box" data-service="freelancing">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V9l-6-5H10zm0 2v3h7V6h-7z"/></svg></span>
+            <h3>Freelancing Courses</h3>
+            <p>Profile setup, proposals, gigs, and client communication.</p>
+        </div>
+
+        <div class="service-box" data-service="start-business">
+            <span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 4.8 5.3.5-3.9 3.4 1.1 5.2L12 13.8 7.3 16l1.1-5.2L4.5 7.3l5.3-.5L12 2z"/></svg></span>
+            <h3>Start Your Business</h3>
+            <p>From idea to launch: planning, branding, and growth.</p>
+        </div>
+
+    </div>
+</section>
+
+<div class="details-panel" id="detailsPanel">
+    <div class="panel-content">
+        <span class="close" id="closePanel">×</span>
+        <h2 id="panelTitle"></h2>
+        <p id="panelText"></p>
+        <div class="panel-actions">
+            <a id="panelCtaBtn" class="btn-primary" href="#">Explore Program</a>
+            <button id="closeBtn" class="btn-ghost">Close</button>
+        </div>
+    </div>
+    
+</div>
+
+
+<script src="services.js"></script>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© TIIES — The International Institute of Entrepreneurship</p>
+        <div class="social-links">
+            <a href="https://web.facebook.com/earnmoneyonlinewithskills/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.7 2.1 15.7 2 14.5 2 11.9 2 10 3.7 10 6.9V10H7v4h3v8h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/tiies.official" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/company/earn-money-online-tiies" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M6 9h3v12H6zM7.5 3A1.5 1.5 0 1 1 6 4.5 1.5 1.5 0 0 1 7.5 3zM11 9h3v1.7a3.3 3.3 0 0 1 3-1.7c3 0 4 1.9 4 4.8V21h-3v-6.1c0-1.6-.4-2.9-2-2.9s-2.3 1.4-2.3 2.9V21H11z"/></svg>
+            </a>
+            <a href="https://wa.me/03011777337" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M12.1 2a9.7 9.7 0 0 0-8.3 15l-1.1 4.1 4.2-1.1A9.7 9.7 0 1 0 12.1 2zm0 2a7.7 7.7 0 0 1 0 15.5 7.6 7.6 0 0 1-3.9-1.1l-.3-.2-2.5.7.7-2.5-.2-.3A7.6 7.6 0 0 1 12.1 4zm4.2 10.8c-.2.6-1.1 1-1.6 1.1s-.4.1-1.3-.3a10.8 10.8 0 0 1-2.8-1.7 9.6 9.6 0 0 1-1.8-2.2c-.5-.9-.6-1.5-.6-1.7s.4-1 1-1.2h.3c.3 0 .5 0 .7.6s.8 1.9.8 2-.1.4-.2.6-.3.5-.5.7c-.2.2-.4.4-.2.8s.9 1.5 1.9 2.4 2 .1 2.3 0 .6-.3.9-.2.6.3.7.5.1.5 0 .6z"/></svg>
+            </a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
