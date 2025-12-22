@@ -1,4 +1,4 @@
-const servicesData = {
+const fallbackData = {
     "basic-computer": {
         text: "Master digital basics: typing, file management, internet safety, email, MS Word, Excel, and PowerPoint. Ideal for students, job seekers, and beginners.",
         link: "basic-computer.html"
@@ -21,6 +21,27 @@ const servicesData = {
     }
 };
 
+let servicesData = {};
+
+async function fetchServices() {
+    try {
+        const res = await fetch("api/services.php", { headers: { "Accept": "application/json" } });
+        if (!res.ok) throw new Error("Network response was not ok");
+        const payload = await res.json();
+        const map = {};
+        if (payload && Array.isArray(payload.services)) {
+            payload.services.forEach(item => {
+                if (item && item.key) {
+                    map[item.key] = { text: item.text, link: item.link, title: item.title };
+                }
+            });
+        }
+        return Object.keys(map).length ? map : fallbackData;
+    } catch (e) {
+        return fallbackData;
+    }
+}
+
 const panel = document.getElementById("detailsPanel");
 const panelContent = document.querySelector(".panel-content");
 const title = document.getElementById("panelTitle");
@@ -29,16 +50,23 @@ const ctaBtn = document.getElementById("panelCtaBtn");
 const closeIcon = document.getElementById("closePanel");
 const closeButton = document.getElementById("closeBtn");
 
-document.querySelectorAll(".service-box").forEach(box => {
-    box.addEventListener("click", () => {
-        const key = box.dataset.service;
-        const data = servicesData[key];
-        title.textContent = box.querySelector("h3").textContent;
-        text.textContent = data.text;
-        ctaBtn.setAttribute("href", data.link);
-        panel.style.display = "flex";
+async function initServices() {
+    servicesData = await fetchServices();
+
+    document.querySelectorAll(".service-box").forEach(box => {
+        box.addEventListener("click", () => {
+            const key = box.dataset.service;
+            const data = servicesData[key] || fallbackData[key];
+            const titleText = data.title || box.querySelector("h3").textContent;
+            title.textContent = titleText;
+            text.textContent = data.text;
+            ctaBtn.setAttribute("href", data.link);
+            panel.style.display = "flex";
+        });
     });
-});
+}
+
+initServices();
 
 closeIcon.addEventListener("click", closePanel);
 if (closeButton) closeButton.addEventListener("click", closePanel);
