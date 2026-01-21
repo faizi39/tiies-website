@@ -6,7 +6,8 @@
 }
 
 body {
-    background: #F5F5F5;
+    background: #F5F5F5 url('background.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Generic page sections used by detail pages */
@@ -15,7 +16,17 @@ body {
     background: #560542;
     color: #fff;
 }
-.page-hero .container { max-width: 1100px; margin: auto; }
+.page-hero .container {
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(253, 248, 238, 0.70);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 16px;
+    padding: 24px 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
 .page-content { max-width: 1000px; margin: auto; padding: 40px 20px; }
 
 /* Footer */
@@ -49,13 +60,7 @@ body {
 
 .services {
     min-height: 100vh;
-    background: linear-gradient(
-        160deg,
-        #560542 0%,
-        #560542 35%,
-        #FDF8EE 35%,
-        #FDF8EE 100%
-    );
+    background: transparent;
     padding: 80px 20px;
 }
 
@@ -64,9 +69,12 @@ body {
     margin: auto;
     text-align: center;
     margin-bottom: 70px;
-    background: rgba(253, 248, 238, 0.92);
+    background: rgba(253, 248, 238, 0.70);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -91,12 +99,15 @@ body {
 }
 
 .service-box {
-    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 18px;
     cursor: pointer;
     position: relative;
     transition: all 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
@@ -154,11 +165,14 @@ body {
 
 .panel-content {
     position: relative;
-    background: #FDF8EE;
+    background: rgba(253, 248, 238, 0.80);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     padding: 40px;
     max-width: 450px;
     width: 90%;
     border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 
@@ -229,6 +243,38 @@ body {
     background: #560542;
     color: #fff;
 }
+/* Registration modal overlay */
+.register-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.register-content {
+    position: relative;
+    background: rgba(253, 248, 238, 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    padding: 28px;
+    max-width: 480px;
+    width: 90%;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.register-content h3 { color: #560542; margin-bottom: 12px; }
+
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.form-field label { display: block; font-weight: 600; color: #560542; margin-bottom: 6px; }
+.form-field input, .form-field textarea { width: 100%; border-radius: 10px; border: 2px solid #560542; padding: 10px 12px; outline: none; background: #fff; }
+.form-field input:focus, .form-field textarea:focus { border-color: #7a0a62; }
+.form-actions { display: flex; gap: 12px; align-items: center; margin-top: 10px; }
+.form-status { color: #560542; font-size: 14px; }
 
 /* Centered illustration on detail pages */
 .center-illustration { max-width: 1000px; margin: 24px auto 0; padding: 0 20px; }
@@ -245,9 +291,12 @@ body {
     padding: 0 20px;
 }
 .feature-text {
-    background:#FDF8EE;
+    background: rgba(253, 248, 238, 0.72);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius:18px;
     padding:28px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow:0 10px 24px rgba(0,0,0,.06);
 }
 .feature-media img{
@@ -257,6 +306,14 @@ body {
     border-radius:18px;
     box-shadow:0 14px 30px rgba(0,0,0,.1);
     background:#F5F5F5;
+}
+
+/* Cards on detail pages have inline backgrounds; override for glass */
+.card {
+    background: rgba(255, 255, 255, 0.72) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 @media (max-width: 900px){

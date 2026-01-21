@@ -49,9 +49,6 @@ const text = document.getElementById("panelText");
 const ctaBtn = document.getElementById("panelCtaBtn");
 const closeIcon = document.getElementById("closePanel");
 const closeButton = document.getElementById("closeBtn");
-const form = document.getElementById("serviceRequestForm");
-const formStatus = document.getElementById("formStatus");
-let currentServiceKey = null;
 
 async function initServices() {
     servicesData = await fetchServices();
@@ -64,9 +61,7 @@ async function initServices() {
             title.textContent = titleText;
             text.textContent = data.text;
             ctaBtn.setAttribute("href", data.link);
-            currentServiceKey = key;
             panel.style.display = "flex";
-            if (formStatus) formStatus.textContent = "";
         });
     });
 }
@@ -90,52 +85,4 @@ document.addEventListener("keydown", function (e) {
 
 function closePanel() {
     panel.style.display = "none";
-}
-
-async function submitRequest(e) {
-    e.preventDefault();
-    if (!form) return;
-    const name = form.querySelector('#reqName')?.value.trim();
-    const email = form.querySelector('#reqEmail')?.value.trim();
-    const phone = form.querySelector('#reqPhone')?.value.trim();
-    const message = form.querySelector('#reqMessage')?.value.trim();
-
-    if (!currentServiceKey) {
-        formStatus.textContent = "Please select a program first.";
-        return;
-    }
-    if (!name || !email) {
-        formStatus.textContent = "Name and email are required.";
-        return;
-    }
-    formStatus.textContent = "Sending...";
-    try {
-        const res = await fetch("api/services.php", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                service_key: currentServiceKey,
-                name,
-                email,
-                phone,
-                message
-            })
-        });
-        const payload = await res.json().catch(() => ({}));
-        if (!res.ok || !payload.success) {
-            formStatus.textContent = payload.error || "Something went wrong.";
-            return;
-        }
-        formStatus.textContent = "Request sent! We'll contact you soon.";
-        form.reset();
-    } catch (err) {
-        formStatus.textContent = "Network error. Please try again.";
-    }
-}
-
-if (form) {
-    form.addEventListener('submit', submitRequest);
 }

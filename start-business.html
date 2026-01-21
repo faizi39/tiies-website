@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Start Your Business | TIIES</title>
   <link rel="stylesheet" href="services.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <header class="page-hero" style="color:#fff; background-image: linear-gradient(rgba(86,5,66,.82), rgba(86,5,66,.82)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center;">
@@ -48,27 +50,72 @@
 
     <div class="cta" style="margin-top:28px;display:flex;gap:12px;">
       <a href="services.html" class="btn-ghost">← Back to Programs</a>
-      <a href="#enroll" class="btn-primary">Begin Your Startup Journey</a>
+      <a href="#" class="btn-primary" data-open-register="true" data-service-key="start-business">Begin Your Startup Journey</a>
     </div>
   </main>
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>© TIIES — The International Institute of Entrepreneurship</p>
-      <div class="social-links">
-        <a href="https://web.facebook.com/earnmoneyonlinewithskills/?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7.5c0-1.1.3-1.8 1.9-1.8H17V2.2C16.7 2.1 15.7 2 14.5 2 11.9 2 10 3.7 10 6.9V10H7v4h3v8h3z"/></svg>
-            </a>
-            <a href="https://www.instagram.com/tiies.official" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/company/earn-money-online-tiies" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M6 9h3v12H6zM7.5 3A1.5 1.5 0 1 1 6 4.5 1.5 1.5 0 0 1 7.5 3zM11 9h3v1.7a3.3 3.3 0 0 1 3-1.7c3 0 4 1.9 4 4.8V21h-3v-6.1c0-1.6-.4-2.9-2-2.9s-2.3 1.4-2.3 2.9V21H11z"/></svg>
-            </a>
-            <a href="https://wa.me/03011777337" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M12.1 2a9.7 9.7 0 0 0-8.3 15l-1.1 4.1 4.2-1.1A9.7 9.7 0 1 0 12.1 2zm0 2a7.7 7.7 0 0 1 0 15.5 7.6 7.6 0 0 1-3.9-1.1l-.3-.2-2.5.7.7-2.5-.2-.3A7.6 7.6 0 0 1 12.1 4zm4.2 10.8c-.2.6-1.1 1-1.6 1.1s-.4.1-1.3-.3a10.8 10.8 0 0 1-2.8-1.7 9.6 9.6 0 0 1-1.8-2.2c-.5-.9-.6-1.5-.6-1.7s.4-1 1-1.2h.3c.3 0 .5 0 .7.6s.8 1.9.8 2-.1.4-.2.6-.3.5-.5.7c-.2.2-.4.4-.2.8s.9 1.5 1.9 2.4 2 .1 2.3 0 .6-.3.9-.2.6.3.7.5.1.5 0 .6z"/></svg>
-            </a>
+  <script src="register.js"></script>
+  <footer class="bg-[#560542] text-white pt-20">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="mr-10">
+        <div class="mb-4">
+          <img src="logo.png" alt="TIIES Logo" class="h-20 w-auto object-contain" />
+        </div>
+        <p class="text-sm text-white/70 leading-relaxed mb-6">The International Institute of Entrepreneurship</p>
+        <div class="flex gap-4">
+          <a href="https://www.facebook.com/earnmoneyonlinewithskills/" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-600 transition">
+            <i class="fa-brands fa-facebook-f text-blue-800"></i>
+          </a>
+          <a href="https://www.instagram.com/earnmoneyonlinewithskills/" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-600 transition">
+            <i class="fa-brands fa-instagram text-indigo-900"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/earn-money-online-tiies" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-pink-600 transition">
+            <i class="fa-brands fa-linkedin text-violet-900"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-5">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white">Home</a></li>
+          <li><a href="#" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Courses</a></li>
+          <li><a href="services.html" class="hover:text-white">Services</a></li>
+          <li><a href="#" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-5">Useful Links</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:text-white">Disclaimer</a></li>
+          <li><a href="#" class="hover:text-white">Support</a></li>
+          <li><a href="#" class="hover:text-white">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-semibold mb-5">Stay Connected</h4>
+        <div class="flex mb-6">
+          <input type="email" placeholder="Your Email Address" class="w-full px-4 py-2 rounded-l-md text-sm text-gray-800 focus:outline-none" />
+          <button class="px-5 py-2 bg-[#560542] text-sm font-medium rounded-r-md hover:opacity-80 transition">Send</button>
+        </div>
+        <div class="space-y-3 text-sm text-white/70">
+          <p class="flex items-center gap-3">
+            <i class="fa-solid fa-location-dot"></i>
+            Iqbal, House#10, Gulshan Iqbal Colony, Ārifwāla, 57450
+          </p>
+          <p class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope"></i>
+            info@tiies.org
+          </p>
+        </div>
       </div>
     </div>
+    <div class="border-t border-white/10 mt-16"></div>
+    <div class="text-center text-sm text-white/60 py-6">Copyright © 2021. All rights reserved.</div>
   </footer>
 </body>
 </html>
